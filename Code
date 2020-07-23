@@ -1,33 +1,56 @@
+//Bhaiyaajee's Code for printing each detailed iteration of Bubble Sort ALgorithm
+
 #include <stdio.h>
 
-void main()
+intmain ()
 {
-    int arr[6]={2,5,8,4,19,10};
-    int i,k, swap;
-    
-    for(k=0;k<5;k++)
+  int arr[5] = { 13,23,1,2,3};
+  int i, j, container;
+
+  printf ("The Unsorted Array is : \n");
+  for (i = 0; i < 5; i++)
     {
-    for(i=0;i<5;i++)
+      printf ("%d ", arr[i]);
+    }
+
+  printf ("\n");
+  
+  //Sorting the Array using Bubble Sort
+
+  for (i = 0; i < 5; i++)
     {
-        if(arr[i]> arr[i+1])
-        {
-            swap= arr[i];
-            arr[i]=arr[i+1];
-            arr[i+1]= swap;
-        }
+         printf ("Iteration : %d \n", i + 1);
+         
+      for (j = 0; j <= 4; j++)
+	{
+
+	  if (arr[j] > arr[j + 1])
+	    {
+	      container = arr[j];
+
+	      arr[j] = arr[j + 1];
+
+	      arr[j + 1] = container;
+	    }
+
+      for (int k = 0; k < 5; k++)  // printing each iteration
+	{
+	  printf ("%d ", arr[k]);
+	}
+	 printf ("\n");
+	
+	}
+
+      printf ("\n");
     }
-    
-    printf("%d iteration :  \n",k+1);
-    
-    for(int g=0;g<6;g++)
+
+  printf ("\nThe Sorted Array is : \n");
+  for (i = 0; i < 5; i++)
     {
-    printf(" %d \n",arr[g]);
+      printf ("%d ", arr[i]);
     }
-    }
-     printf("Final Array:  \n");
-        
-        for(int j=0 ; j<6; j++)
-        {
-            printf("%d \n", arr[j]);
-        }
-    }
+
+  printf ("\nThe Greatest Element of the Array is %d  & the Smallest is %d ",arr[4], arr[0]);
+	  
+  return 0;
+}
